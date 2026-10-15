@@ -43,6 +43,13 @@ pub fn build(b: *std.Build) void {
             .fuzzer = tests,
         });
 
+    buildExe(b, .{
+        .lib = libasio,
+        .path = "examples/http_ws_examples.cpp",
+        .ssl = false,
+        .fuzzer = false,
+    });
+
     if (tests) {
         buildExe(b, .{
             .lib = libasio,
