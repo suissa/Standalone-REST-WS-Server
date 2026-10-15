@@ -2,6 +2,7 @@
 #define SIMPLE_WEB_ASIO_COMPATIBILITY_HPP
 
 #include <memory>
+#include <cctype>
 
 #ifdef ASIO_STANDALONE
 #include <asio.hpp>
