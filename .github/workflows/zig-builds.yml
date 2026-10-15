@@ -47,7 +47,7 @@ jobs:
           version: master
 
       - name: Build WebSocket integration test
-        run: zig build -Dtests -Dtarget=x86_64-linux-gnu websocket_test --summary all
+        run: zig build -Dtests -Dtarget=x86_64-linux-gnu --summary all
 
       - name: Run WebSocket communication test
         run: zig build -Dtests -Dtarget=x86_64-linux-gnu websocket_test --summary all
