@@ -44,48 +44,19 @@ pub fn build(b: *std.Build) void {
         });
 
     if (tests) {
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/fuzzers/http_header_field_value_semicolon_separated_attributes_parse.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/fuzzers/http_header_parse.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/fuzzers/query_string_parse.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/fuzzers/percent_decode.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/parse_test.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
+        buildExe(b, .{
+            .lib = libasio,
+            .path = "tests/websocket_test.cpp",
+            .ssl = false,
+            .fuzzer = false,
+        });
+
         buildExe(b, .{
             .lib = libasio,
             .path = "tests/status_code_test.cpp",
             .ssl = ssl,
             .fuzzer = tests,
         });
-        // buildExe(b, .{
-        //     .lib = libasio,
-        //     .path = "tests/io_test.cpp",
-        //     .ssl = ssl,
-        //     .fuzzer = tests,
-        // });
         if (ssl) buildExe(b, .{
             .lib = libasio,
             .path = "tests/crypto_test.cpp",
